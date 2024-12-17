@@ -1,0 +1,26 @@
+The solution involves using a more specific selector to target the inner `<span>` element on hover, ensuring its style has higher specificity than the parent's `:hover` style.
+
+```css
+div {
+  width: 100px;
+  height: 100px;
+  background-color: lightblue;
+}
+
+div:hover {
+  background-color: lightgreen;
+}
+
+div span {
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-color: yellow;
+}
+
+div:hover span {
+  background-color: orange; /* Now works as expected */
+}
+```
+
+By targeting `div:hover span`, we've increased the specificity of the selector, ensuring the desired hover effect is applied correctly.
