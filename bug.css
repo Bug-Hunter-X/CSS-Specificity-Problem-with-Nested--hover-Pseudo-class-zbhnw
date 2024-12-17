@@ -1,0 +1,24 @@
+The following CSS code snippet demonstrates an issue where the expected behavior of the `:hover` pseudo-class on a nested element doesn't work as anticipated due to specificity issues and event bubbling.  The hover effect on the inner `<span>` doesn't trigger because the outer `<div>`'s style rule is more specific.
+
+```css
+div {
+  width: 100px;
+  height: 100px;
+  background-color: lightblue;
+}
+
+div:hover {
+  background-color: lightgreen;
+}
+
+div span {
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-color: yellow;
+}
+
+div span:hover {
+  background-color: orange; /* This doesn't work as expected */
+}
+```
